@@ -44,15 +44,40 @@ El proyecto fue desarrollado para aplicar y reforzar conceptos del desarrollo fr
     * Archivos JSON: Se utilizan para almacenar datos como factores de emisión, categorías de consumo y equivalencias.
 
 ## Cómo Empezar
-Para ejecutar este proyecto, simplemente abre el archivo index.html en tu navegador web (se recomienda usar la extensión llamada Live Server).
+Puedes ejecutar el proyecto de dos maneras: utilizando Docker (recomendado para un entorno consistente) o directamente en tu máquina local.
+
+### Ejecutar con Docker (Recomendado)
+Este método empaqueta la aplicación y sus dependencias en un contenedor, asegurando que funcione correctamente en cualquier sistema con Docker instalado.
+
+1.  **Construir la imagen de Docker:**
+    Desde la raíz del proyecto, ejecuta el siguiente comando para construir la imagen.
+    ```bash
+    docker build -t calculadora-huella .
+    ```
+
+2.  **Ejecutar el contenedor:**
+    Una vez construida la imagen, ejecuta este comando para iniciar el contenedor.
+    ```bash
+    docker run -d -p 8888:8080 --name app-calculadora calculadora-huella
+    ```
+    *   Esto mapeará el puerto `8888` de tu máquina al puerto `8080` del contenedor. Puedes cambiar `8888` por otro puerto si lo deseas.
+
+3.  **Abrir la aplicación:**
+    Abre tu navegador y ve a `http://localhost:8888`.
+
+### Ejecutar localmente (sin Docker)
+Este método requiere que sirvas los archivos a través de un servidor web local para evitar problemas de seguridad del navegador (CORS).
 
 1.  **Clona el repositorio:**
-    ```bash git clone https://github.com/OpazoTD/Tp-Integrador-Front-End.git```
-2. **Navega a la carpeta del proyecto**:
-``` cd Tp-Integrador-Front-End ```
-
-3.  **Abre el archivo `index.html`** en tu navegador web y ya podrás utilizar la aplicación.
-
+    ```bash
+    git clone https://github.com/OpazoTD/Tp-Integrador-Front-End.git
+    ```
+2.  **Navega a la carpeta del proyecto**:
+    ```bash
+    cd Tp-Integrador-Front-End
+    ```
+3.  **Inicia un servidor local:**
+    La forma más sencilla es usar la extensión **Live Server** en Visual Studio Code. Haz clic derecho en `index.html` y selecciona "Open with Live Server". Tu navegador se abrirá automáticamente en una dirección como `http://127.0.0.1:5500`.
 
 ## Licencia
 Este proyecto es de código abierto y se distribuye bajo la Licencia MIT. Eres libre de usar, copiar, modificar y distribuir el software. Para más detalles, consulta el archivo LICENSE en el repositorio.

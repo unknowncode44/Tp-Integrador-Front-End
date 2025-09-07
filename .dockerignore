@@ -1,0 +1,11 @@
+# Ignorar el directorio de control de versiones
+.git
+
+# Ignorar la configuración del editor
+.vscode
+
+# Ignorar el propio Dockerfile
+Dockerfile
+
+# Ignorar este archivo
+.dockerignore
